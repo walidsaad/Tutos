@@ -171,3 +171,28 @@ EXPOSE 22 80">>Dockerfile
 -Build image
 $ sudo docker build -t myimage .
 $ sudo docker images
+
+
+5-Running web application:
+-Change Dockerfile to deploy web application
+$ echo \
+"FROM ubuntu:16.04 
+RUN apt-get update && apt-get install -y openssh-server apache2 git vim
+RUN mkdir /var/run/sshd
+RUN echo 'root:root' | chpasswd
+RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN git clone https://github.com/walidsaad/MyApp-v2.git /var/www/html/MyApp
+#ADD MyApp /var/www/html/MyApp
+WORKDIR /var/www/html/MyApp
+RUN service apache2 restart
+EXPOSE 22 80" >>Dockerfile
+
+-Build image
+
+$ sudo docker build -t myimage .
+
+-Start container:
+
+$ sudo docker run -dt -p 80:80 --name docker1 myimage
+$ sudo docker exec -d docker1 /etc/init.d/apache2 start
+-->http://localhost/MyApp/ (with chrome)
