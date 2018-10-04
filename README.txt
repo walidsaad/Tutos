@@ -1,4 +1,6 @@
 
+
+http://localhost:8000
 yum -y install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-18.06.1.ce-3.el7.x86_64.rpm
 sudo systemctl start docker
 
@@ -242,3 +244,13 @@ $ sudo docker build -t myimage .
 $ sudo docker run -dt -p 80:80 --name docker1 myimage
 $ sudo docker exec -d docker1 /etc/init.d/apache2 start
 -->http://localhost/MyApp/ (with chrome)
+
+
+Vagrant.configure(2) do |config|
+  config.vm.provider 'docker' do |d|
+    d.build_dir = '.'
+    d.build_args = ['--tag=thasmo/apache', '--rm=true']
+    d.create_args = ['--rm=true']
+    d.has_ssh = true
+  end
+end
