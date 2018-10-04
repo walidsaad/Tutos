@@ -152,3 +152,22 @@ end
 3-Start Vagrant Provision
 
 $ vagrant up
+
+
+
+
+
+
+2-Build your own image
+
+-Write a Dockerfile:
+$ echo \
+"FROM ubuntu:16.04 
+RUN apt-get update && apt-get install -y openssh-server git apache2 python vim
+RUN mkdir /var/run/sshd
+RUN echo 'root:root' | chpasswd
+RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+EXPOSE 22 80">>Dockerfile
+-Build image
+$ sudo docker build -t myimage .
+$ sudo docker images
