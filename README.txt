@@ -427,7 +427,7 @@ of the same service to have access to the same files.
 (you can update the services to use a different driver without changing the application logic), for ex from NFS to AWS S3.
 
 **************************************************************************************************
-		Lab 6 : Manage data in Docker (Volumes)
+		Lab 6 : Manage Network
 **************************************************************************************************
 Docker Network driver:
 -User-defined bridge networks are best when you need multiple containers to communicate on the same Docker host.
