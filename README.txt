@@ -519,7 +519,7 @@ $ sudo docker network inspect my-network
         "Labels": {}
     }
 ]
-$ sudo docker run -dit --name myapache4 --network my-network httpd:latest
+$ sudo docker run -d --name myapache4 --network my-network httpd:latest
 $ sudo docker network inspect my-network
 [
     {
