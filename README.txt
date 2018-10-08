@@ -217,7 +217,6 @@ RUN echo 'root:root' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN git clone https://github.com/walidsaad/training-app-front.git /var/www/html/MyApp
 #ADD MyApp /var/www/html/MyApp
-WORKDIR /var/www/html/MyApp
 EXPOSE 22 80" >>Dockerfile
 
 -Build image
