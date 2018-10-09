@@ -9,4 +9,6 @@ $ docker service create \
 portainer/portainer \
 -H unix:///var/run/docker.sock
 
-wget https://releases.hashicorp.com/vagrant/2.1.4/vagrant_2.1.4_x86_64.deb
+sudo yum -y install https://releases.hashicorp.com/vagrant/2.1.4/vagrant_2.1.4_x86_64.rpm (https://releases.hashicorp.com/vagrant/2.1.4/)
+
+sudo yum install git ansible
