@@ -47,7 +47,7 @@ services:
 volumes:
     dbdata:" >>docker-compose.yml
 
-$ sudo docker-compose up
+$ sudo docker-compose up -d
 Creating network "my_wordpress_default" with the default driver
 Creating volume "my_wordpress_dbdata" with default driver
 Pulling db (mysql:5.7)...
