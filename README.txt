@@ -229,4 +229,4 @@ mongo    | 2018-10-06T22:06:54.435+0000 I COMMAND  [LogicalSessionCacheRefresh] 
 
 
 
-==>Access to application (nodejs server) http://41.229.35.211:3000/
+==>Access to application (nodejs server) http://localhost:3000/
