@@ -8,3 +8,5 @@ $ docker service create \
 --mount type=volume,src=portainer_data,dst=/data \
 portainer/portainer \
 -H unix:///var/run/docker.sock
+
+wget https://releases.hashicorp.com/vagrant/2.1.4/vagrant_2.1.4_x86_64.deb
