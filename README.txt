@@ -30,6 +30,3 @@ echo "Docker HOST (Swarm Worker) has been created successfully on $machine"
 done
 echo "Docker Swarm Cluster has been created successfully"
 fi
-
-wget https://www-lipn.univ-paris13.fr/~saad/Docker-Swarm.zip
-wget http://www-lipn.univ-paris13.fr/~saad/docker-machine-tuto.zip
