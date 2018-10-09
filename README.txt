@@ -16,7 +16,7 @@ SWARM_CLUSTER_TOKEN="$3"
 
 echo "Start creating Docker Swarm Cluster"
 echo "1-Create Docker Host Master Node"
-./docker-machine create -d virtualbox --swarm  --swarm-discovery "token://$SWARM_CLUSTER_TOKEN" --swarm-master 22 $2
+docker-machine create -d virtualbox --swarm  --swarm-discovery "token://$SWARM_CLUSTER_TOKEN" --swarm-master $2
 echo "Docker HOST (Swarm Master) has been created successfully on $2"
 
 echo "2-Create Docker Host Worker Nodes"
@@ -25,7 +25,7 @@ echo $nb_lignes
 for i in $(seq $nb_lignes)
 do
 machine=`head $1 -n $i | tail -1`
-./docker-machine create -d virtualbox --swarm  --swarm-discovery "token://$SWARM_CLUSTER_TOKEN"   $machine
+docker-machine create -d virtualbox --swarm  --swarm-discovery "token://$SWARM_CLUSTER_TOKEN"   $machine
 echo "Docker HOST (Swarm Worker) has been created successfully on $machine"
 done
 echo "Docker Swarm Cluster has been created successfully"
