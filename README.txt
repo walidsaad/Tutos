@@ -1,4 +1,5 @@
 
+wget https://www-lipn.univ-paris13.fr/~saad/Docker-Swarm.zip
 wget http://www-lipn.univ-paris13.fr/~saad/docker-machine-tuto.zip
 **************************************************************************************************
 		Atelier 7.1 : Multi-containers with docker-compose
